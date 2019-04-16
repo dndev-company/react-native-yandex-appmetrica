@@ -1,14 +1,22 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 const { YandexAppmetrica } = NativeModules;
 
 export default {
     activateWithApiKey(apiKey, push = false) {
-        YandexAppmetrica.activateWithApiKey(apiKey, push);
+        if (Platform.OS === 'ios') {
+            YandexAppmetrica.activateWithApiKey(apiKey);
+        } else {
+            YandexAppmetrica.activateWithApiKey(apiKey, push);
+        }
     },
 
     activateWithConfig(config, push = false) {
-        YandexAppmetrica.activateWithConfig(config, push);
+        if (Platform.OS === 'ios') {
+            YandexAppmetrica.activateWithConfig(config);
+        } else {
+            YandexAppmetrica.activateWithConfig(config, push);
+        } 
     },
 
     reportEvent(message, params) {
