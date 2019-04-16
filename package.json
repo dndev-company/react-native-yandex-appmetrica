@@ -1,0 +1,16 @@
+{
+  "name": "react-native-yandex-appmetrica",
+  "version": "1.0.0",
+  "description": "React Native bridge for Yandex Appmetrica",
+  "main": "index.js",
+  "author": "Alexander Zayka <zayka.alexander@dndev.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dndev/react-native-yandex-appmetrica.git"
+  },
+  "typings": "./index.d.ts",
+  "peerDependencies": {
+    "react-native": ">=0.56"
+  }
+}
