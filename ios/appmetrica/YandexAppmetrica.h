@@ -1,4 +1,4 @@
 #import <React/RCTBridgeModule.h>
 
-@interface YandexMetrica : NSObject <RCTBridgeModule>
+@interface YandexAppmetrica : NSObject <RCTBridgeModule>
 @end
