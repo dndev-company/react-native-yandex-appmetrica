@@ -12,7 +12,11 @@ export default {
     },
 
     reportEvent(message, params) {
-        YandexAppmetrica.reportEvent(message, params)
+        if (params) {
+            YandexAppmetrica.reportEventWithParams(message, params);
+        } else {
+            YandexAppmetrica.reportEvent(message);
+        }
     },
 
     reportError(message, reason) {

@@ -70,12 +70,15 @@ public class YandexAppmetricaModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void reportEvent(String message, @Nullable ReadableMap config) {
-        if (config != null) {
-            YandexMetrica.reportEvent(message, this.getJson(config));
-        } else {
-            YandexMetrica.reportEvent(message);
-        }
+    public void reportEvent(String message) {
+        Log.d("reportEvent", "");
+        YandexMetrica.reportEvent(message);
+    }
+
+    @ReactMethod
+    public void reportEventWithParams(String message, ReadableMap config) {
+        Log.d("reportEventWithParams", "");
+        YandexMetrica.reportEvent(message, this.getJson(config));
     }
 
     @ReactMethod

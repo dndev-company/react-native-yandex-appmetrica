@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		110A08692265318900AF2D1C /* appmetrica.h in Headers */ = {isa = PBXBuildFile; fileRef = 110A08672265318900AF2D1C /* appmetrica.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11EA8F0522664C7900C19A76 /* YandexAppmetrica-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 11EA8F0222664C7900C19A76 /* YandexAppmetrica-Bridging-Header.h */; };
+		11EA8F0622664C7900C19A76 /* YandexAppmetrica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA8F0322664C7900C19A76 /* YandexAppmetrica.swift */; };
+		11EA8F0722664C7900C19A76 /* YandexAppmetrica.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA8F0422664C7900C19A76 /* YandexAppmetrica.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		110A08642265318900AF2D1C /* appmetrica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = appmetrica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		110A08672265318900AF2D1C /* appmetrica.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = appmetrica.h; sourceTree = "<group>"; };
-		110A08682265318900AF2D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11EA8F0222664C7900C19A76 /* YandexAppmetrica-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YandexAppmetrica-Bridging-Header.h"; sourceTree = "<group>"; };
+		11EA8F0322664C7900C19A76 /* YandexAppmetrica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexAppmetrica.swift; sourceTree = "<group>"; };
+		11EA8F0422664C7900C19A76 /* YandexAppmetrica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YandexAppmetrica.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			children = (
 				110A08662265318900AF2D1C /* appmetrica */,
 				110A08652265318900AF2D1C /* Products */,
+				110FE3632265510F00051C51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +50,18 @@
 		110A08662265318900AF2D1C /* appmetrica */ = {
 			isa = PBXGroup;
 			children = (
-				110A08672265318900AF2D1C /* appmetrica.h */,
-				110A08682265318900AF2D1C /* Info.plist */,
+				11EA8F0222664C7900C19A76 /* YandexAppmetrica-Bridging-Header.h */,
+				11EA8F0422664C7900C19A76 /* YandexAppmetrica.m */,
+				11EA8F0322664C7900C19A76 /* YandexAppmetrica.swift */,
 			);
 			path = appmetrica;
+			sourceTree = "<group>";
+		};
+		110FE3632265510F00051C51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +71,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				110A08692265318900AF2D1C /* appmetrica.h in Headers */,
+				11EA8F0522664C7900C19A76 /* YandexAppmetrica-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					110A08632265318900AF2D1C = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -130,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EA8F0722664C7900C19A76 /* YandexAppmetrica.m in Sources */,
+				11EA8F0622664C7900C19A76 /* YandexAppmetrica.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +272,17 @@
 		110A086D2265318900AF2D1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YandexMobileMetrica/dynamic",
+				);
 				INFOPLIST_FILE = appmetrica/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -273,6 +293,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dndev.appmetrica;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "appmetrica/YandexAppmetrica-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -280,12 +303,17 @@
 		110A086E2265318900AF2D1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YandexMobileMetrica/dynamic",
+				);
 				INFOPLIST_FILE = appmetrica/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -296,6 +324,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dndev.appmetrica;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "appmetrica/YandexAppmetrica-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

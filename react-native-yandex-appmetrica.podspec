@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.summary = package['description']
     s.authors = package['author']
     s.license = { type: package['license'] }
-    s.homepage = "https://github.com/dndev/react-native-yandex-appmetrica"
+    s.homepage = package['repository']['url']
     s.source = { git: package['repository']['url'] }
     s.source_files = "ios/appmetrica/*.{h,m}"
     s.platform = :ios, "8.0"
