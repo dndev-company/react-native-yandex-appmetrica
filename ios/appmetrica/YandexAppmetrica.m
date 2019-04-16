@@ -12,7 +12,7 @@ RCT_EXPORT_METHOD(activateWithApiKey:(NSString *)apiKey) {
   [YMMYandexMetrica activateWithConfiguration:configuration];
 }
 
-RCT_EXTERN_METHOD(activateWithConfig:(NSDictionary *)config) {
+RCT_EXPORT_METHOD(activateWithConfig:(NSDictionary *)config) {
   YMMYandexMetricaConfiguration *configuration = [[YMMYandexMetricaConfiguration alloc] initWithApiKey:config[@"apiKey"]];
   if (config[@"sessionTimeout"] != (id)[NSNull null]) {
       [configuration setSessionTimeout:[config[@"sessionTimeout"] intValue]];
