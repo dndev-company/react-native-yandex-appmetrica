@@ -1,7 +1,7 @@
-#import "React/RCTBridgeModule.h"
+#import "YandexAppmetrica.h"
 #import <YandexMobileMetrica/YandexMobileMetrica.h>
 
-@implementation YandexAppmetrica {
+@implementation YandexAppmetrica : NSObject {
 
 }
 
