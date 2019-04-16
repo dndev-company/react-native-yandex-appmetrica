@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.license = { type: package['license'] }
     s.homepage = package['repository']['url']
     s.source = { git: package['repository']['url'] }
-    s.source_files = "ios/appmetrica/*.{h,m,swift}"
+    s.source_files = "ios/appmetrica/*.{h,m}"
     s.platform = :ios, "8.0"
 
     s.dependency "React"
