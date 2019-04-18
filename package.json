@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Alexander Zayka <zayka.alexander@dndev.ru>",
   "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dndev/react-native-yandex-appmetrica.git"
